@@ -46,7 +46,7 @@ class ScreenBitmap(object):
 		gdi32.StretchBlt(self._memDC,0,0,self.width,self.height,self._screenDC,int(x),int(y),int(w),int(h),winGDI.SRCCOPY)
 		#Fetch the pixels from our memory bitmap and store them in a buffer to be returned
 		buffer=(winGDI.RGBQUAD*self.width*self.height)()
-		gdi32.GetDIBits(self._memDC,self._memBitmap,0,self.height,buffer,ctypes.byref(self._bmInfo),winGDI.DIB_RGB_COLORS);
+		gdi32.GetDIBits(self._memDC,self._memBitmap,0,self.height,buffer,ctypes.byref(self._bmInfo),winGDI.DIB_RGB_COLORS)
 		return buffer
 
 def rgbPixelBrightness(p):

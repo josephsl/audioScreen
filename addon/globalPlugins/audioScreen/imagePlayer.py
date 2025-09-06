@@ -1,7 +1,6 @@
 
 
 import math
-import time
 import colorsys
 from . import libaudioverse
 import wx
@@ -53,7 +52,7 @@ class ImagePlayer_pitchStereoGrey(object):
 		self.lavPanner.mul.linear_ramp_to_value(fadeLength,0)
 		totalVolume=0
 		for y in range(self.height):
-			index=-1-y;
+			index=-1-y
 			lavWave,lavPanner=self.lavWaves[index]
 			left=0
 			right=0
@@ -84,7 +83,7 @@ class ImagePlayer_pitchStereoGrey(object):
 		offset=0
 		totalVolumes=[0]*self.width
 		for y in range(self.height):
-			index=-1-y;
+			index=-1-y
 			lavWave,lavPanner=self.lavWaves[index]
 			lavPanner.mul=0
 			lavWave.mul=0
