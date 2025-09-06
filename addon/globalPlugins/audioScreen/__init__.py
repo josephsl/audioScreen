@@ -67,7 +67,7 @@ class AudioScreenPanel(SettingsPanel):
 				else:
 					try:
 						value=float(control.Value) if v[1]=='float' else int(control.Value)
-					except:
+					except Exception:
 						value=v[2]
 					modeConf[v[0]]=value
 				modeControlIndex+=1
@@ -121,7 +121,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(AudioScreenPanel)
 
 	def playPoint(self,x,y):
-		if not self.imagePlayer: return
+		if not self.imagePlayer:
+			return
 		screenWidth,screenHeight=api.getDesktopObject().location[2:]
 		width=self.captureWidth
 		height=self.captureHeight
@@ -130,7 +131,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.playRect(x,y,width,height)
 
 	def playRect(self,x,y,width,height,detailed=False,forceRestart=False):
-		if not self.imagePlayer: return
+		if not self.imagePlayer:
+			return
 		rect=(x,y,width,height)
 		if not forceRestart and rect==self._lastRect:
 			return
@@ -139,11 +141,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.imagePlayer.setNewImage(buffer,detailed=detailed)
 
 	def stopPlaying(self):
-		if self.imagePlayer: self.imagePlayer.setNewImage(None)
+		if self.imagePlayer:
+			self.imagePlayer.setNewImage(None)
 
 	def event_mouseMove(self,obj,nextHandler,x=None,y=None):
 		nextHandler()
-		if touchHandler.handler: return
+		if touchHandler.handler:
+			return
 		self.playPoint(x,y)
 
 	def setMode(self,modeID,report=False):
@@ -155,7 +159,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			imagePlayer.terminate()
 		self.screenBitmap=None
 		if modeInfo[1] is None:
-			if report: ui.message(_("AudioScreen off"))
+			if report:
+				ui.message(_("AudioScreen off"))
 		else:
 			modeConf={k:v for k,v in config.conf["audioScreen_%s"%modeInfo[1].__name__].items()}
 			self.captureWidth=modeConf.pop('captureWidth',modeConf['width'])
@@ -213,7 +218,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		else:
 			self.playPoint(gesture.tracker.x,gesture.tracker.y)
 		script=globalCommands.commands.getScript(gesture)
-		if script: script(gesture)
+		if script:
+			script(gesture)
 
 	@scriptHandler.script(
 		# Translators: input help message for Audio Screen add-on command.
@@ -223,7 +229,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_hoverUp(self,gesture):
 		self.stopPlaying()
 		script=globalCommands.commands.getScript(gesture)
-		if script: script(gesture)
+		if script:
+			script(gesture)
 
 	@scriptHandler.script(
 		# Translators: input help message for Audio Screen add-on command.
