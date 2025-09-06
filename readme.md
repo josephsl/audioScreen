@@ -42,17 +42,17 @@ Some examples:
 * Dark grey: quiet random noise.
 
 ## System requirements
-* An installed copy of NVDA 2015.4 or higher (NVDA 2016.1 or higher for multi-finger sweeping)
-* Windows 8 Operating system or later
-* A Windows 8/10 compatible touch screen, otherwise a mouse. 
+* An installed copy of NVDA 2024.1 or higher
+* Windows 10 Operating system or later
+* A Windows 10/11 compatible touch screen, otherwise a mouse. 
 * Visual feedback for touch must be turned off in Windows. Search for Change Touch Input setting in the start screen, and in that dialog uncheck Show visual feedback when touching the screen.
  
 ## Download
-* Download [AudioScreen 2020.1 [NVDA add-on file]](http://www.nvaccess.org/audioScreen/audioScreen-2020.1.nvda-addon).
+* Download AudioScreen from the add-on store.
 * Download [Example images [zip file]](http://www.nvaccess.org/audioScreen/audioScreenImages.zip).
 
 ## Running AudioScreen
-After downloading the Audio Screen add-on, with NVDA running simply press enter on the file in Windows Explorer to have NVDA install it for you. Alternatively, you can open Manage Add-ons found under Tools in the NVDA menu, and add it from there. After the add-on is installed, NVDA will ask to be restarted. 
+After the add-on is installed from the add-on store, NVDA will ask to be restarted. 
 
 Important: Visual feedback for touch must be turned off in Windows. Search for Change Touch Input setting in the start screen, and in that dialog uncheck Show visual feedback when touching the screen.
  
