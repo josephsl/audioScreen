@@ -15,6 +15,7 @@ import gui
 import globalPluginHandler
 import touchHandler
 import globalCommands
+import scriptHandler
 import api
 from . import screenBitmap
 import textInfos
@@ -81,6 +82,8 @@ class AudioScreenDialog(SettingsDialog):
 		super(AudioScreenDialog,self).onOk(evt)
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
+	# Translators: input gestures category for Audio Screen add-on.
+	scriptCategory=_("Audio Screen")
 
 	audioScreenModes=[
 		(_("Off"),None),
@@ -164,10 +167,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				inputType=_("touch input") if touchHandler.handler else _("mouse input")
 				ui.message(_("AudioScreen mode {mode}, {inputType}").format(mode=modeInfo[0],inputType=inputType))
 
+	@scriptHandler.script(
+		# Translators: input help message for Audio Screen add-on command.
+		description=_("Toggles AudioScreen   between several modes")
+	)
 	def script_toggleAudioScreen(self,gesture):
 		self.setMode((self.curAudioScreenMode+1)%len(self.audioScreenModes),report=True)
-	script_toggleAudioScreen.__doc__="Toggles AudioScreen   between several modes"
 
+	@scriptHandler.script(
+		# Translators: input help message for Audio Screen add-on command.
+		description=_("Toggles between light on dark, and dark on light")
+	)
 	def script_toggleBrightness(self,gesture):
 		if not self.imagePlayer:
 			ui.message(_("Audio screen currently off"))
@@ -180,6 +190,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.imagePlayer.reverseBrightness=rb
 	script_toggleBrightness.__doc__="Toggles between light on dark, and dark on light"
 
+	@scriptHandler.script(
+		# Translators: input help message for Audio Screen add-on command.
+		description=_("Plays the image under your fingers"),
+		gestures=[
+			"ts:hoverDown", "ts:hold+hoverDown", "ts:hover", "ts:hold+hover", "ts:hold+hoverUp"
+		]
+	)
 	def script_hover(self,gesture):
 		preheldTracker=getattr(gesture,'preheldTracker',None)
 		if preheldTracker:
@@ -198,14 +215,22 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.playPoint(gesture.tracker.x,gesture.tracker.y)
 		script=globalCommands.commands.getScript(gesture)
 		if script: script(gesture)
-	script_hover.__doc__=_("Plays the image under your fingers")
 
+	@scriptHandler.script(
+		# Translators: input help message for Audio Screen add-on command.
+		description=_("Stops audioScreen playback"),
+		gesture="ts:hoverUp"
+	)
 	def script_hoverUp(self,gesture):
 		self.stopPlaying()
 		script=globalCommands.commands.getScript(gesture)
 		if script: script(gesture)
-	script_hoverUp.__doc__=_("Stops audioScreen playback")
 
+	@scriptHandler.script(
+		# Translators: input help message for Audio Screen add-on command.
+		description=_("Plays the image of the current navigator object"),
+		gesture="kb:alt+NVDA+a"
+	)
 	def script_playNavigatorObject(self,gesture):
 		if not self.imagePlayer:
 			ui.message(_("AudioScreen disabled"))
@@ -213,20 +238,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		obj=api.getNavigatorObject()
 		x,y,w,h=obj.location
 		self.playRect(x,y,w,h,detailed=True,forceRestart=True)
-	script_playNavigatorObject.__doc__=_("Plays the image of the current navigator object")
 
 	def script_showUI(self,gesture):
 		wx.CallAfter(gui.mainFrame._popupSettingsDialog,AudioScreenDialog,self)
-
-	__gestures={
-		"ts:hoverDown":"hover",
-		"ts:hold+hoverDown":"hover",
-		"ts:hover":"hover",
-		"ts:hold+hover":"hover",
-		"ts:hoverUp":"hoverUp",
-		"ts:hold+hoverUp":"hover",
-		"kb:NVDA+Shift+a":"showUI",
-		"kb:NVDA+Control+a":"toggleAudioScreen",
-		"kb:alt+NVDA+a":"playNavigatorObject",
-	}
-
