@@ -10,7 +10,7 @@ import ctypes
 import wx
 from . import libaudioverse
 import config
-from gui.settingsDialogs import SettingsDialog
+from gui.settingsDialogs import SettingsPanel
 import gui
 import globalPluginHandler
 import touchHandler
@@ -22,14 +22,13 @@ import textInfos
 import ui
 from . import imagePlayer
 
-class AudioScreenDialog(SettingsDialog):
-	title=_("AudioScreen settings")
-
-	def __init__(self,parent,plugin):
-		self.plugin=plugin
-		super(AudioScreenDialog,self).__init__(parent)
+class AudioScreenPanel(SettingsPanel):
+	# Translators: This is the label for the Audio Screen settings panel.
+	title = _("Audio Screen")
 
 	def makeSettings(self,settingsSizer):
+		self.plugin = audioScreenPlugin
+
 		generalSizer=wx.StaticBoxSizer(wx.StaticBox(self,wx.ID_ANY,_("General")),wx.VERTICAL)
 		modeChoiceSizer=wx.BoxSizer(wx.HORIZONTAL)
 		modeChoiceSizer.Add(wx.StaticText(self,wx.ID_ANY,_("Mode")))
@@ -59,10 +58,7 @@ class AudioScreenDialog(SettingsDialog):
 			modesSizer.Add(modeSizer)
 		settingsSizer.Add(modesSizer)
 
-	def postInit(self):
-		self.modeChoice.SetFocus()
-
-	def onOk(self,evt):
+	def onSave(self):
 		modeControlIndex=0
 		for mode in GlobalPlugin.audioScreenModes[1:]:
 			modeConf=config.conf["audioScreen_%s"%mode[1].__name__]
@@ -79,7 +75,10 @@ class AudioScreenDialog(SettingsDialog):
 				modeControlIndex+=1
 		curMode=self.modeChoice.GetSelection()
 		self.plugin.setMode(curMode)
-		super(AudioScreenDialog,self).onOk(evt)
+
+
+audioScreenPlugin = None
+
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	# Translators: input gestures category for Audio Screen add-on.
