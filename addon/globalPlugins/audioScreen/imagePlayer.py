@@ -131,7 +131,7 @@ class ImagePlayer_pitchStereoGrey(object):
 			else:
 				if not detailed:
 					self._playWholeImage(imageData)
-					self._sweeperCallback=wx.CallLater(self.sweepDelay*1000,self._sweepImage,imageData,self.sweepDuration,self.sweepCount)
+					self._sweeperCallback=wx.CallLater(int(self.sweepDelay*1000),self._sweepImage,imageData,self.sweepDuration,self.sweepCount)
 				else:
 					self._sweepImage(imageData,self.sweepDuration,self.sweepCount)
 
