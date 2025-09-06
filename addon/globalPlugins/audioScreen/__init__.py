@@ -240,5 +240,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		x,y,w,h=obj.location
 		self.playRect(x,y,w,h,detailed=True,forceRestart=True)
 
+	@scriptHandler.script(
+		# Translators: input help message for Aduio Screen add-on command.
+		description=_("Shows Audio Screen setttings")
+	)
 	def script_showUI(self,gesture):
-		wx.CallAfter(gui.mainFrame._popupSettingsDialog,AudioScreenDialog,self)
+		gui.mainFrame.popupSettingsDialog(NVDASettingsDialog, AudioScreenPanel)
