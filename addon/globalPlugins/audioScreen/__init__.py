@@ -6,11 +6,10 @@ import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__),'deps'))
 
-import ctypes
 import wx
 from . import libaudioverse
 import config
-from gui.settingsDialogs import SettingsPanel
+from gui.settingsDialogs import SettingsPanel, NVDASettingsDialog
 import gui
 import globalPluginHandler
 import touchHandler
@@ -18,7 +17,6 @@ import globalCommands
 import scriptHandler
 import api
 from . import screenBitmap
-import textInfos
 import ui
 from . import imagePlayer
 
