@@ -114,12 +114,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self._lastRect=None
 		self.curAudioScreenMode=0
 		self.imagePlayer=self.screenBitmap=None
-		item = gui.mainFrame.sysTrayIcon.preferencesMenu.Append(wx.ID_ANY,_("&AudioScreen..."),_("AudioScreen"))
-		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.script_showUI, item)
+		gui.settingsDialogs.NVDASettingsDialog.categoryClasses.append(AudioScreenPanel)
 		super(GlobalPlugin,self).__init__()
+		global audioScreenPlugin
+		audioScreenPlugin = self
 
 	def terminate(self):
 		libaudioverse.shutdown()
+		gui.settingsDialogs.NVDASettingsDialog.categoryClasses.remove(AudioScreenPanel)
 
 	def playPoint(self,x,y):
 		if not self.imagePlayer: return
