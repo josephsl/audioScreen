@@ -1,3 +1,6 @@
+# Audio Screen add-on
+# Copyright (C) 2015-2025 NV Access Limited
+
 import sys
 import os
 
