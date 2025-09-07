@@ -1,4 +1,4 @@
-# Audio Screen add-on
+# AudioScreen add-on
 # Copyright (C) 2015-2025 NV Access Limited
 
 import sys
@@ -21,8 +21,8 @@ import ui
 from . import imagePlayer
 
 class AudioScreenPanel(SettingsPanel):
-	# Translators: This is the label for the Audio Screen settings panel.
-	title = _("Audio Screen")
+	# Translators: This is the label for the AudioScreen settings panel.
+	title = _("AudioScreen")
 
 	def makeSettings(self,settingsSizer):
 		self.plugin = audioScreenPlugin
@@ -79,8 +79,8 @@ audioScreenPlugin = None
 
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
-	# Translators: input gestures category for Audio Screen add-on.
-	scriptCategory=_("Audio Screen")
+	# Translators: input gestures category for AudioScreen add-on.
+	scriptCategory=_("AudioScreen")
 
 	audioScreenModes=[
 		(_("Off"),None),
@@ -172,19 +172,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				ui.message(_("AudioScreen mode {mode}, {inputType}").format(mode=modeInfo[0],inputType=inputType))
 
 	@scriptHandler.script(
-		# Translators: input help message for Audio Screen add-on command.
+		# Translators: input help message for AudioScreen add-on command.
 		description=_("Toggles AudioScreen   between several modes")
 	)
 	def script_toggleAudioScreen(self,gesture):
 		self.setMode((self.curAudioScreenMode+1)%len(self.audioScreenModes),report=True)
 
 	@scriptHandler.script(
-		# Translators: input help message for Audio Screen add-on command.
+		# Translators: input help message for AudioScreen add-on command.
 		description=_("Toggles between light on dark, and dark on light")
 	)
 	def script_toggleBrightness(self,gesture):
 		if not self.imagePlayer:
-			ui.message(_("Audio screen currently off"))
+			ui.message(_("Audioscreen currently off"))
 			return
 		rb=not self.imagePlayer.reverseBrightness
 		if not rb:
@@ -195,7 +195,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	script_toggleBrightness.__doc__="Toggles between light on dark, and dark on light"
 
 	@scriptHandler.script(
-		# Translators: input help message for Audio Screen add-on command.
+		# Translators: input help message for AudioScreen add-on command.
 		description=_("Plays the image under your fingers"),
 		gestures=[
 			"ts:hoverDown", "ts:hold+hoverDown", "ts:hover", "ts:hold+hover", "ts:hold+hoverUp"
@@ -222,7 +222,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			script(gesture)
 
 	@scriptHandler.script(
-		# Translators: input help message for Audio Screen add-on command.
+		# Translators: input help message for AudioScreen add-on command.
 		description=_("Stops audioScreen playback"),
 		gesture="ts:hoverUp"
 	)
@@ -233,7 +233,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			script(gesture)
 
 	@scriptHandler.script(
-		# Translators: input help message for Audio Screen add-on command.
+		# Translators: input help message for AudioScreen add-on command.
 		description=_("Plays the image of the current navigator object"),
 		gesture="kb:alt+NVDA+a"
 	)
@@ -247,7 +247,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	@scriptHandler.script(
 		# Translators: input help message for Aduio Screen add-on command.
-		description=_("Shows Audio Screen setttings")
+		description=_("Shows AudioScreen setttings")
 	)
 	def script_showUI(self,gesture):
 		gui.mainFrame.popupSettingsDialog(NVDASettingsDialog, AudioScreenPanel)

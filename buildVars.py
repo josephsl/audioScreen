@@ -18,10 +18,10 @@ addon_info = AddonInfo(
 	# Add-on summary/title, usually the user visible name of the add-on
 	# Translators: Summary/title for this add-on
 	# to be shown on installation and add-on information found in add-on store
-	addon_summary=_("Audio Screen"),
+	addon_summary=_("AudioScreen"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-on store
-	addon_description=_("""Allows you to "feel" images with your ears, while moving your finger around a touch screen on Windows 8 and above."""),
+	addon_description=_("""Allows you to "feel" images with your ears, while moving your finger around a touch screen on Windows 10 and above."""),
 	# version
 	addon_version="2020.1",
 	# Brief changelog for this version
