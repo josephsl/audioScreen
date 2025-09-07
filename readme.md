@@ -56,15 +56,17 @@ After the add-on is installed from the add-on store, NVDA will ask to be restart
 
 Important: Visual feedback for touch must be turned off in Windows. Search for Change Touch Input setting in the start screen, and in that dialog uncheck Show visual feedback when touching the screen.
  
-While NVDA is running with this add-on installed, open an interesting image in full-screen (For example, use Internet Explorer to display one of the example svg files, making sure to maximize it and put it in full-screen with f11). 
+While NVDA is running with this add-on installed, open an interesting image in full-screen (For example, use Microsoft Edge to display one of the example svg files, making sure to maximize it and put it in full-screen with f11). 
 
-AudioScreen is off by default, so turn it on by switching to one of its modes by pressing NVDA+control+a. This toggles between Pitch stereo grey, HSV color, and off.
+AudioScreen is off by default, so turn it on by switching to a different mode from AudioScreen settings (NVDA Menu/Preferences/Settings/AudioScreen). This toggles between Pitch stereo grey, HSV color, and off.
 
 Now move your finger or mouse around the screen and start listening to the image under your finger. 
 As NVDA can also speak controls and text under your finger, viewing an SVG map or diagram works great, as Internet Explorer will allow NVDA to speak the title and or description for any shape your finger moves over, assuming that a title and or description have been properly defined using the title and desc tags appropriately in the SVG file. 
 
 ## Commands
-### Change Audio Mode (Press NVDA+Control+a)
+You can add or change keyboard commands by going to NVDA menu/Preferences/Input gestures under AudioScreen category.
+
+### Change Audio Mode (unassigned)
 This command toggles between several modes: 
 * pitch stereo grey: for investigating lines and contours of images (useful for maps and diagrams etc)
 * HSV color: for investigating the color variation of images (useful for photographs).
@@ -73,7 +75,7 @@ This command toggles between several modes:
 ### Play Navigator Object (Press NVDA+alt+a)
 This command will play NVDA's current navigator object, by performing multiple vOICe-style stereo sweeps across it.
 
-### Show Settings UI (Press NVDA+shift+a)
+### Show Settings (unassigned)
 This brings up a settings dialog which allows you to change multiple options for audioScreen. The Settings UI can also be launched by choosing AudioScreen... found under Preferences in the NVDA menu.
 
 ## Settings
