@@ -1,9 +1,9 @@
 import ctypes
 import winGDI
 try:
-	from winBindings.gdi32 import BITMAPINFO
+	from winBindings.gdi32 import BITMAPINFO, RGBQUAD
 except ModuleNotFoundError:
-	from winGDI import BITMAPINFO
+	from winGDI import BITMAPINFO, RGBQUAD
 
 user32=ctypes.windll.user32
 gdi32=ctypes.windll.gdi32
@@ -49,7 +49,7 @@ class ScreenBitmap(object):
 	#Copy the requested content from the screen in to our memory device context, stretching/shrinking its size to fit.
 		gdi32.StretchBlt(self._memDC,0,0,self.width,self.height,self._screenDC,int(x),int(y),int(w),int(h),winGDI.SRCCOPY)
 		#Fetch the pixels from our memory bitmap and store them in a buffer to be returned
-		buffer=(winGDI.RGBQUAD*self.width*self.height)()
+		buffer=(RGBQUAD*self.width*self.height)()
 		gdi32.GetDIBits(self._memDC,self._memBitmap,0,self.height,buffer,ctypes.byref(self._bmInfo),winGDI.DIB_RGB_COLORS)
 		return buffer
 
