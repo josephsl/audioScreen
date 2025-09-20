@@ -22,6 +22,8 @@ exclude = [
 	"__pycache__",
 	# libaudioverse is a third-party module
 	"addon/globalPlugins/audioScreen/libaudioverse/*.py",
+	# libaudioverse64 is 64-bit version of a third-party module
+	"addon/globalPlugins/audioScreen/libaudioverse64/*.py",
 ]
 
 [tool.ruff.format]
