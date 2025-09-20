@@ -26,8 +26,7 @@ addon_info = AddonInfo(
 	addon_version="2025.1",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
-	addon_changelog=_("""* NVDA 2024.1 or later and Windows 10 or 11 are required.
-	* NVDA will no longer appear to do nothing or play error tones when pitch stereo gray is enabled and a finger is held for more than half a second."""),
+	addon_changelog=_("""* Improved compatibility with NVDA 2026.1, including compatibility with 64-bit NVDA."""),
 	# Author(s)
 	addon_author="NV Access Limited <info@nvaccess.org>",
 	# URL for the add-on documentation support
