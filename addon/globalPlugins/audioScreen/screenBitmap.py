@@ -21,7 +21,11 @@ class ScreenBitmap(object):
 		#Fetch the device context for the screen
 		self._screenDC=user32.GetDC(0)
 		#Create a memory device context with which we can copy screen content to on request.
-		self._memDC=gdi32.CreateCompatibleDC(self._screenDC)
+		# Sometimes handle value overflows on 64-bit NVDA.
+		# Therefore, repeatedly create and delete memory DC until the HDC falls under the maximum (2 ** 32).
+		while (memDC := gdi32.CreateCompatibleDC(self._screenDC)) > 2**31:
+			gdi32.DeleteDC(memDC)
+		self._memDC=memDC
 		#Create a new bitmap of the chosen size, and set this as the memory device context's bitmap, so that what is drawn is captured.
 		self._memBitmap=gdi32.CreateCompatibleBitmap(self._screenDC,width,height)
 		self._oldBitmap=gdi32.SelectObject(self._memDC,self._memBitmap)
