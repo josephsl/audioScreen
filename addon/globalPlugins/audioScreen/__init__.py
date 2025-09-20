@@ -7,7 +7,11 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__),'deps'))
 
 import wx
-from . import libaudioverse
+# Load 32-bit or 64-bit libaudioverse depending on processor (app) architecture.
+if os.environ["PROCESSOR_ARCHITECTURE"] in ("AMD64", "ARM64"):
+	from . import libaudioverse64 as libaudioverse
+else:
+	from . import libaudioverse
 import config
 from gui.settingsDialogs import SettingsPanel, NVDASettingsDialog
 import gui
