@@ -1,5 +1,9 @@
 import ctypes
 import winGDI
+try:
+	from winBindings.gdi32 import BITMAPINFO
+except ModuleNotFoundError:
+	from winGDI import BITMAPINFO
 
 user32=ctypes.windll.user32
 gdi32=ctypes.windll.gdi32
@@ -22,7 +26,7 @@ class ScreenBitmap(object):
 		self._memBitmap=gdi32.CreateCompatibleBitmap(self._screenDC,width,height)
 		self._oldBitmap=gdi32.SelectObject(self._memDC,self._memBitmap)
 		#We always want standard RGB data
-		bmInfo=winGDI.BITMAPINFO()
+		bmInfo=BITMAPINFO()
 		bmInfo.bmiHeader.biSize=ctypes.sizeof(bmInfo)
 		bmInfo.bmiHeader.biWidth=width
 		bmInfo.bmiHeader.biHeight=height*-1
