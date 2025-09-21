@@ -107,12 +107,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		config.conf.spec["audioScreen_%s"%mode[1].__name__]={v[0]:"%s(default=%s)"%v[1:3] for v in mode[2]}
 
 	def __init__(self):
+		super().__init__()
 		libaudioverse.initialize()
 		self._lastRect=None
 		self.curAudioScreenMode=0
 		self.imagePlayer=self.screenBitmap=None
 		gui.settingsDialogs.NVDASettingsDialog.categoryClasses.append(AudioScreenPanel)
-		super().__init__()
 		global audioScreenPlugin
 		audioScreenPlugin = self
 
