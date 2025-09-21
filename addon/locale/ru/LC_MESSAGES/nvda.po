@@ -1,0 +1,178 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AudioScreen\n"
+"POT-Creation-Date: 2025-09-21 10:54+0300\n"
+"PO-Revision-Date: 2025-09-21 10:59+0300\n"
+"Last-Translator: nvda.ru\n"
+"Language-Team: Russian translation team <nvda.ru>, Danil Kostenkov "
+"<danilkostenkov38@gmail.com>\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.7\n"
+"X-Poedit-Basepath: ../../../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: addon\n"
+"X-Poedit-SearchPath-2: addon/globalPlugins/audioScreen\n"
+"X-Poedit-SearchPath-3: addon/globalPlugins/audioScreen/libaudioverse\n"
+"X-Poedit-SearchPath-4: addon/globalPlugins/audioScreen/libaudioverse64\n"
+
+#: addon/globalPlugins/audioScreen/__init__.py:29
+#: addon/globalPlugins/audioScreen/__init__.py:87 buildVars.py:21
+msgid "AudioScreen"
+msgstr "AudioScreen (Звуковое представление экрана)"
+
+#: addon/globalPlugins/audioScreen/__init__.py:34
+msgid "General"
+msgstr "Общие"
+
+#: addon/globalPlugins/audioScreen/__init__.py:36
+msgid "Mode"
+msgstr "Режим"
+
+#: addon/globalPlugins/audioScreen/__init__.py:90
+msgid "Off"
+msgstr "Выключено"
+
+#: addon/globalPlugins/audioScreen/__init__.py:91
+msgid "pitch stereo grey"
+msgstr "высота стерео-звука серого тона"
+
+#: addon/globalPlugins/audioScreen/__init__.py:92
+msgid "Reverse brightness (useful for white on black)"
+msgstr "Обратная яркость (полезно для белого на чёрном)"
+
+#: addon/globalPlugins/audioScreen/__init__.py:93
+msgid "Number of columns in stereo field"
+msgstr "Количество столбцов в стереополе"
+
+#: addon/globalPlugins/audioScreen/__init__.py:94
+msgid "Number of rows (frequencies)"
+msgstr "Количество строк (частот)"
+
+#: addon/globalPlugins/audioScreen/__init__.py:95
+msgid "Lowest frequency in HZ"
+msgstr "Наименьшая частота (в герцах)"
+
+#: addon/globalPlugins/audioScreen/__init__.py:96
+msgid "highest frequency in HZ"
+msgstr "наибольшая частота (в герцах)"
+
+#: addon/globalPlugins/audioScreen/__init__.py:97
+msgid "Initial stereo sweep Delay in seconds"
+msgstr "Начальная задержка стерео сигнала в секундах"
+
+#: addon/globalPlugins/audioScreen/__init__.py:98
+msgid "Duration of stereo audio sweep in seconds"
+msgstr "Длительность воспроизведения стерео сигнала в секундах"
+
+#: addon/globalPlugins/audioScreen/__init__.py:99
+msgid "Numver of stereo sweeps"
+msgstr "Количество стерео сигналов"
+
+#: addon/globalPlugins/audioScreen/__init__.py:100
+msgid ""
+"width (in pixels) of the rectangle at the point under your finger / the mouse"
+msgstr ""
+"ширина прямоугольника в точке под вашим пальцем или под указателем мыши (в "
+"пикселях)"
+
+#: addon/globalPlugins/audioScreen/__init__.py:101
+msgid ""
+"height (in pixels) of the rectangle at the point under your finger / the "
+"mouse"
+msgstr ""
+"высота прямоугольника в точке под вашим пальцем или под указателем мыши (в "
+"пикселях)"
+
+#: addon/globalPlugins/audioScreen/__init__.py:103
+msgid "HSV Color"
+msgstr "Цвет HSV"
+
+#: addon/globalPlugins/audioScreen/__init__.py:104
+msgid "Horizontal length of   capture area in pixels"
+msgstr "Горизонтальная длина области захвата в пикселях"
+
+#: addon/globalPlugins/audioScreen/__init__.py:105
+msgid "Vertical length of capture area in pixels"
+msgstr "Вертикальная длина области захвата в пикселях"
+
+#: addon/globalPlugins/audioScreen/__init__.py:106
+msgid "Lowest frequency (blue) in HZ"
+msgstr "Наименьшая частота (синий) (в герцах)"
+
+#: addon/globalPlugins/audioScreen/__init__.py:107
+msgid "highest frequency (red) in HZ"
+msgstr "наибольшая частота (красный) (в герцах)"
+
+#: addon/globalPlugins/audioScreen/__init__.py:167
+msgid "AudioScreen off"
+msgstr "Звуковое представление экрана выключено"
+
+#: addon/globalPlugins/audioScreen/__init__.py:175
+msgid "touch input"
+msgstr "сенсорный ввод"
+
+#: addon/globalPlugins/audioScreen/__init__.py:175
+msgid "mouse input"
+msgstr "ввод мышью"
+
+#: addon/globalPlugins/audioScreen/__init__.py:176
+#, python-brace-format
+msgid "AudioScreen mode {mode}, {inputType}"
+msgstr "Режим звукового представления экрана: {mode}, {inputType}"
+
+#: addon/globalPlugins/audioScreen/__init__.py:180
+msgid "Toggles AudioScreen   between several modes"
+msgstr "Переключает аудиоэкран между несколькими режимами"
+
+#: addon/globalPlugins/audioScreen/__init__.py:187
+msgid "Toggles between light on dark, and dark on light"
+msgstr "Переключает между светлым на тёмном и тёмным на светлом"
+
+#: addon/globalPlugins/audioScreen/__init__.py:191
+msgid "Audioscreen currently off"
+msgstr "Сейчас звуковое представление экрана выключено"
+
+#: addon/globalPlugins/audioScreen/__init__.py:203
+msgid "Plays the image under your fingers"
+msgstr "Воспроизводит изображение под вашими пальцами"
+
+#: addon/globalPlugins/audioScreen/__init__.py:230
+msgid "Stops audioScreen playback"
+msgstr "Останавливает воспроизведение изображения"
+
+#: addon/globalPlugins/audioScreen/__init__.py:241
+msgid "Plays the image of the current navigator object"
+msgstr "Воспроизводит изображение текущего объекта навигатора"
+
+#: addon/globalPlugins/audioScreen/__init__.py:246
+msgid "AudioScreen disabled"
+msgstr "Звуковое представление экрана выключено"
+
+#: addon/globalPlugins/audioScreen/__init__.py:254
+msgid "Shows AudioScreen setttings"
+msgstr "Открывает настройки звукового представления экрана"
+
+#: buildVars.py:24
+msgid ""
+"Allows you to \"feel\" images with your ears, while moving your finger "
+"around a touch screen on Windows 10 and above."
+msgstr ""
+"Это дополнение  позволяет незрячим пользователям  \"ощущать\" изображения "
+"ушами. Используя сенсорный экран или мышь, можно водить пальцем по картинке "
+"и слышать её контуры и цвета в реальном времени. Для работы дополнения "
+"требуется Windows 10 или более поздняя версия."
+
+#: buildVars.py:29
+msgid ""
+"* Improved compatibility with NVDA 2026.1, including compatibility with 64-"
+"bit NVDA."
+msgstr ""
+
+#~ msgid "&AudioScreen..."
+#~ msgstr "Звуковое представление &экрана..."
