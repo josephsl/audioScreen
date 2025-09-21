@@ -1,12 +1,12 @@
 import os
 import math
 import colorsys
+import wx
 # Load 32-bit or 64-bit libaudioverse depending on processor (app) architecture.
 if os.environ["PROCESSOR_ARCHITECTURE"] in ("AMD64", "ARM64"):
 	from . import libaudioverse64 as libaudioverse
 else:
 	from . import libaudioverse
-import wx
 from .screenBitmap import rgbPixelBrightness
 
 fadeLength=0.05

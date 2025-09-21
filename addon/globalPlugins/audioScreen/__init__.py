@@ -3,11 +3,6 @@
 
 import os
 import wx
-# Load 32-bit or 64-bit libaudioverse depending on processor (app) architecture.
-if os.environ["PROCESSOR_ARCHITECTURE"] in ("AMD64", "ARM64"):
-	from . import libaudioverse64 as libaudioverse
-else:
-	from . import libaudioverse
 import config
 from gui.settingsDialogs import SettingsPanel, NVDASettingsDialog
 import gui
@@ -16,9 +11,14 @@ import touchHandler
 import globalCommands
 import scriptHandler
 import api
-from . import screenBitmap
 import ui
+from . import screenBitmap
 from . import imagePlayer
+# Load 32-bit or 64-bit libaudioverse depending on processor (app) architecture.
+if os.environ["PROCESSOR_ARCHITECTURE"] in ("AMD64", "ARM64"):
+	from . import libaudioverse64 as libaudioverse
+else:
+	from . import libaudioverse
 
 class AudioScreenPanel(SettingsPanel):
 	# Translators: This is the label for the AudioScreen settings panel.
