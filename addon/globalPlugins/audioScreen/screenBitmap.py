@@ -16,6 +16,7 @@ class ScreenBitmap(object):
 		@param width: the width of the resulting bitmap in rgb pixels.
 		@param height: the height of the bitmap in rgb pixels.
 		"""
+		super().__init__()
 		self.width=width
 		self.height=height
 		#Fetch the device context for the screen

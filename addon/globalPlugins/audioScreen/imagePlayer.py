@@ -20,6 +20,7 @@ class ImagePlayer_pitchStereoGrey(object):
 	_sweeperCallback=None
 
 	def __init__(self,width,height,lowFreq=500,highFreq=5000,sweepDelay=0.5,sweepDuration=4,sweepCount=4,reverseBrightness=False):
+		super().__init__()
 		self.width=width
 		self.height=height
 		self.baseFreq=lowFreq
@@ -145,6 +146,7 @@ class ImagePlayer_pitchStereoGrey(object):
 class ImagePlayer_hsv(object):
 
 	def __init__(self,width,height,lowFreq=90,highFreq=4000):
+		super().__init__()
 		self.width=width
 		self.height=height
 		self.lowFreq=lowFreq
