@@ -196,7 +196,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		else:
 			ui.message("Light on dark")
 		self.imagePlayer.reverseBrightness=rb
-	script_toggleBrightness.__doc__="Toggles between light on dark, and dark on light"
 
 	@scriptHandler.script(
 		# Translators: input help message for AudioScreen add-on command.
