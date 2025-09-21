@@ -112,7 +112,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.curAudioScreenMode=0
 		self.imagePlayer=self.screenBitmap=None
 		gui.settingsDialogs.NVDASettingsDialog.categoryClasses.append(AudioScreenPanel)
-		super(GlobalPlugin,self).__init__()
+		super().__init__()
 		global audioScreenPlugin
 		audioScreenPlugin = self
 
