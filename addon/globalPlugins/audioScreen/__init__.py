@@ -1,11 +1,7 @@
 # AudioScreen add-on
 # Copyright (C) 2015-2025 NV Access Limited
 
-import sys
 import os
-
-sys.path.append(os.path.join(os.path.dirname(__file__),'deps'))
-
 import wx
 # Load 32-bit or 64-bit libaudioverse depending on processor (app) architecture.
 if os.environ["PROCESSOR_ARCHITECTURE"] in ("AMD64", "ARM64"):
