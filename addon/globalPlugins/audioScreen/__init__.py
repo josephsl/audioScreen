@@ -1,5 +1,5 @@
 # AudioScreen add-on
-# Copyright (C) 2015-2025 NV Access Limited
+# Copyright (C) 2015-2026 NV Access Limited
 
 import os
 import collections
