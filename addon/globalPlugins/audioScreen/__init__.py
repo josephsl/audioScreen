@@ -1,6 +1,7 @@
 # AudioScreen add-on
 # Copyright (C) 2015-2026 NV Access Limited
 
+import sys
 import os
 import collections
 import wx
@@ -16,11 +17,17 @@ import ui
 from NVDAObjects import NVDAObject
 from . import screenBitmap
 from . import imagePlayer
+# NVDA 2026.1 does not include six (wxPython does not include this module).
+if "six" not in sys.modules:
+	sixPath = os.path.abspath(os.path.dirname(__file__))
+	sys.path.append(sixPath)
 # Load 32-bit or 64-bit libaudioverse depending on processor (app) architecture.
 if os.environ["PROCESSOR_ARCHITECTURE"] in ("AMD64", "ARM64"):
 	from . import libaudioverse64 as libaudioverse
 else:
 	from . import libaudioverse
+if "six" not in sys.modules:
+	sys.path.remove(sixPath)
 
 class AudioScreenPanel(SettingsPanel):
 	# Translators: This is the label for the AudioScreen settings panel.
