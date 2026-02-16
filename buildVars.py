@@ -26,8 +26,7 @@ addon_info = AddonInfo(
 	addon_version="2025.2",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
-	addon_changelog=_("""* Made the add-on code more robust with help from Pyright (a Python static type checker).
-* Improved compatibility with NVDA 2026.1, including compatibility with 64-bit NVDA."""),
+	addon_changelog=_("""* Further work on NVDA 2026.1 compatibility."""),
 	# Author(s)
 	addon_author="NV Access Limited <info@nvaccess.org>",
 	# URL for the add-on documentation support
