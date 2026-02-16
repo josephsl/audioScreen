@@ -24,6 +24,8 @@ exclude = [
 	"addon/globalPlugins/audioScreen/libaudioverse/*.py",
 	# libaudioverse64 is 64-bit version of a third-party module
 	"addon/globalPlugins/audioScreen/libaudioverse64/*.py",
+	# six is a third-party module
+	"addon/globalPlugins/audioScreen/six.py",
 ]
 
 [tool.ruff.format]
@@ -62,6 +64,8 @@ exclude = [
 	"addon/globalPlugins/audioScreen/libaudioverse/*.py",
 	# libaudioverse64 is 64-bit version of a third-party module
 	"addon/globalPlugins/audioScreen/libaudioverse64/*.py",
+	# six is a third-party module
+	"addon/globalPlugins/audioScreen/six.py",
 ]
 
 # Tell pyright where to load python code from
