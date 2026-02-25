@@ -28,11 +28,11 @@ addon_info = AddonInfo(
 	# Translators: what's new content for the add-on version to be shown in the add-on store
 	addon_changelog=_("""* Further work on NVDA 2026.1 compatibility."""),
 	# Author(s)
-	addon_author="NV Access Limited <info@nvaccess.org>",
+	addon_author="Joseph Lee <joseph.lee22590@gmail.com> (formerly NV Access Limited <info@nvaccess.org>)",
 	# URL for the add-on documentation support
-	addon_url="https://github.com/nvaccess/audioScreen",
+	addon_url="https://github.com/josephsl/audioScreen",
 	# URL for the add-on repository where the source code can be found
-	addon_sourceURL="http://github.com/nvaccess/audioScreen",
+	addon_sourceURL="https://github.com/josephsl/audioScreen",
 	# Documentation file name
 	addon_docFileName="readme.html",
 	# Minimum NVDA version supported (e.g. "2019.3.0", minor version is optional)
