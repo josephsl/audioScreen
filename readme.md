@@ -50,7 +50,7 @@ Some examples:
 
 ## System requirements
 
-* An installed copy of NVDA 2025.3.3 or higher
+* An installed copy of NVDA 2026.1.1 or higher
 * Windows 10 or 11
 * A Windows 10/11 compatible touch screen, otherwise a mouse. 
 * Visual feedback for touch must be turned off in Windows. Search for Change Touch Input setting in the start screen, and in that dialog uncheck Show visual feedback when touching the screen.
