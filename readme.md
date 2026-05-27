@@ -60,6 +60,10 @@ Some examples:
 * Download AudioScreen from the add-on store.
 * Download [Example images [zip file]](http://www.nvaccess.org/audioScreen/audioScreenImages.zip).
 
+## License
+
+AudioScreen is licensed under GNU General Public License. The add-on also uses Libaudioverse (author: Austin Hicks, licensed under both GPL and Mozilla Public License (MPL) 2.0) and Six modules.
+
 ## Running AudioScreen
 
 After the add-on is installed from the add-on store, NVDA will ask to be restarted. 
