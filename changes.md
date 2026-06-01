@@ -4,7 +4,7 @@ This page lists the complete changelog for AudioScreen add-on releases.
 
 ## Version 2026.3
 
-* NVDA 2025.3.3 or later is required.
+* NVDA 2026.1.1 or later is required.
 
 ## Version 2026.2
 
