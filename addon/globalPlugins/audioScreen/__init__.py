@@ -12,6 +12,7 @@ import globalPluginHandler
 import touchHandler
 import globalCommands
 import scriptHandler
+import inputCore
 import api
 import ui
 from NVDAObjects import NVDAObject
@@ -194,14 +195,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Translators: input help message for AudioScreen add-on command.
 		description=_("Toggles AudioScreen   between several modes")
 	)
-	def script_toggleAudioScreen(self, gesture):
+	def script_toggleAudioScreen(self, gesture: inputCore.InputGesture):
 		self.setMode((self.curAudioScreenMode+1)%len(self.audioScreenModes),report=True)
 
 	@scriptHandler.script(
 		# Translators: input help message for AudioScreen add-on command.
 		description=_("Toggles between light on dark, and dark on light")
 	)
-	def script_toggleBrightness(self, gesture):
+	def script_toggleBrightness(self, gesture: inputCore.InputGesture):
 		if not self.imagePlayer:
 			ui.message(_("Audioscreen currently off"))
 			return
@@ -219,7 +220,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			"ts:hoverDown", "ts:hold+hoverDown", "ts:hover", "ts:hold+hover", "ts:hold+hoverUp"
 		]
 	)
-	def script_hover(self, gesture):
+	def script_hover(self, gesture: inputCore.InputGesture):
 		preheldTracker=getattr(gesture,'preheldTracker',None)
 		if preheldTracker:
 			xList=[tracker.x for tracker in preheldTracker.childTrackers]
@@ -244,7 +245,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		description=_("Stops audioScreen playback"),
 		gesture="ts:hoverUp"
 	)
-	def script_hoverUp(self, gesture):
+	def script_hoverUp(self, gesture: inputCore.InputGesture):
 		self.stopPlaying()
 		script=globalCommands.commands.getScript(gesture)
 		if script:
@@ -255,7 +256,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		description=_("Plays the image of the current navigator object"),
 		gesture="kb:alt+NVDA+a"
 	)
-	def script_playNavigatorObject(self, gesture):
+	def script_playNavigatorObject(self, gesture: inputCore.InputGesture):
 		if not self.imagePlayer:
 			ui.message(_("AudioScreen disabled"))
 			return
@@ -267,5 +268,5 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		# Translators: input help message for Aduio Screen add-on command.
 		description=_("Shows AudioScreen setttings")
 	)
-	def script_showUI(self, gesture):
+	def script_showUI(self, gesture: inputCore.InputGesture):
 		gui.mainFrame.popupSettingsDialog(NVDASettingsDialog, AudioScreenPanel)
