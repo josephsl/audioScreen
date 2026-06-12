@@ -30,7 +30,7 @@ class AudioScreenPanel(SettingsPanel):
 	# Translators: This is the label for the AudioScreen settings panel.
 	title = _("AudioScreen")
 
-	def makeSettings(self,settingsSizer):
+	def makeSettings(self, settingsSizer: wx.BoxSizer):
 		self.plugin = audioScreenPlugin
 
 		generalSizer=wx.StaticBoxSizer(wx.StaticBox(self,wx.ID_ANY,_("General")),wx.VERTICAL)
