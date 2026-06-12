@@ -3,7 +3,7 @@
 
 import sys
 import os
-import collections
+import collections.abc
 import wx
 import config
 from gui.settingsDialogs import SettingsPanel, NVDASettingsDialog
