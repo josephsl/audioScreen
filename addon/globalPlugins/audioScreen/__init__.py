@@ -88,8 +88,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	# Translators: input gestures category for AudioScreen add-on.
 	scriptCategory=_("AudioScreen")
 
+	# Mode label, image player object, list of options (for off, an empty list)
 	audioScreenModes=[
-		(_("Off"),None),
+		(_("Off"),None,[]),
 		(_("pitch stereo grey"),imagePlayer.ImagePlayer_pitchStereoGrey,[
 			("reverseBrightness","boolean",False,_("Reverse brightness (useful for white on black)")),
 			("width","integer",176,_("Number of columns in stereo field")),
