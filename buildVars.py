@@ -23,7 +23,7 @@ addon_info = AddonInfo(
 	# Translators: Long description to be shown for this add-on on add-on information from add-on store
 	addon_description=_("""Allows you to "feel" images with your ears, while moving your finger around a touch screen on Windows 10 and above."""),
 	# version
-	addon_version="2026.2",
+	addon_version="2026.3",
 	# Brief changelog for this version
 	# Translators: what's new content for the add-on version to be shown in the add-on store
 	addon_changelog=_("""* NVDA 2026.1 (64-bit) or later is required."""),
